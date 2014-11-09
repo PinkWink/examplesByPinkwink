@@ -27,8 +27,8 @@ void draw() {
 
 	drawPanel();
 
-	float[][] T_0_1 = Mat.multiply(RotZ(theta1), TransX(a1));
-	float[][] T_1_2 = Mat.multiply(RotZ(theta2), TransX(a2));
+	float[][] T_0_1 = Mat.multiply(RotM('a', theta1), TransM(a1,0,0));
+	float[][] T_1_2 = Mat.multiply(RotM('a', theta2), TransM(a2,0,0));
 	float[][] T_total = Mat.multiply(T_0_1, T_1_2);
 
 	float[][] y0_1 = Mat.multiply(T_0_1, y0);
@@ -60,14 +60,20 @@ void draw() {
 	drawObject(pol0, centerPos);
 	drawObject(pol0_1, centerPos);
 	drawObject(pol0_2, centerPos);
-}	
-
-float[][] RotZ(float theta) {
-	return new float[][]{{cos(theta), -sin(theta), 0,0},{sin(theta), cos(theta), 0,0},{0,0,1,0},{0,0,0,1}};
 }
 
-float[][] TransX(float a) {
-	return new float[][]{{1,0,0,a},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
+float[][] RotM(char axis, float theta) {
+	if (axis=='a') {
+		return new float[][]{{cos(theta),-sin(theta), 0,0},{sin(theta),cos(theta), 0,0},{0,0,1,0},{0,0,0,1}};
+	} else if (axis=='o') {
+		return new float[][]{{cos(theta),0,sin(theta),0},{0,1,0,0},{-sin(theta),0,cos(theta),0},{0,0,0,1}};
+	} else {
+		return new float[][]{{1,0,0,0},{0,cos(theta),-sin(theta),0},{0,sin(theta),cos(theta),0},{0,0,0,1}};
+	}
+}
+
+float[][] TransM(float x, float y, float z) {
+	return new float[][]{{1,0,0,x},{0,1,0,y},{0,0,1,z},{0,0,0,1}};
 }
 
 void drawObject(float[][] obTarget, float centerPos) {
