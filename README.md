@@ -6,5 +6,6 @@ PinkWink's Example Code
 4. pendulumUsingRK4inPython : Dynamics simulation of Pendulum using Runge Kutta in Python.(Python 3.4.1)
 5. plotDatainPython : Example of plotting graph in Python.
 6. exPapayaMatrix : Example of matrix operation using Papaya library in Processing
+7. exKinematicsTwoLinkInMATLAB : Two Link Planar kinematics example in MATLAB.
 
 http://pinkwink.kr
