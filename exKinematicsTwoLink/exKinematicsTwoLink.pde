@@ -14,7 +14,7 @@ float slidePos1, slidePos2;
 float[][] y0 = {{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}};
 float[][] pol0 = {{10,20,10,10},{10,10,20,10},{0,0,0,0},{1,1,1,1}};
 
-PFont titleFont = createFont("Helvetica",15,true);
+PFont titleFont = createFont("Helvetica",20,true);
 PFont smallFont = createFont("Helvetica",12,true);
 PFont tinyFont = createFont("Helvetica",9,true);
 
@@ -101,9 +101,9 @@ void drawBodyAxis(float[][] bodyMat, float centerPos, float sizeOfAxis) {
 void drawPanel() {
 	fill(50);
 	textFont(titleFont);
-	text("Two Link Planar Kinematics Example using Niku's DH Table",80,20);
+	text("Kinematics Example of Two Link Planar",140,25);
 	textFont(smallFont);
-	text("by PinkWink",500,40);
+	text("by PinkWink",500,45);
 
 	stroke(150);
 	line(50,550,280,550);
