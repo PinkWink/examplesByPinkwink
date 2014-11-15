@@ -37,6 +37,11 @@ void draw() {
 	float[] originX = {y0[0][3], y0_1[0][3], y0_2[0][3]};
 	float[] originY = {y0[1][3], y0_1[1][3], y0_2[1][3]};
 
+	noFill();
+	stroke(200);
+	ellipse(centerPos + y0[0][3], centerPos - y0[1][3], a1*2, a1*2);
+	ellipse(centerPos + y0_1[0][3], centerPos - y0_1[1][3], a2*2, a2*2);
+
 	strokeWeight(2);
 	stroke(color(#8E8E8E));
 	line(centerPos + originX[0], centerPos - originY[0], centerPos + originX[1], centerPos - originY[1]);
