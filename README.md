@@ -9,5 +9,6 @@ PinkWink's Example Code
 7. exKinematicsTwoLinkInMATLAB : Two Link Planar kinematics example in MATLAB.
 								And inverse kinematics
                                  (http://pinkwink.kr/688)
+8. exPythonClass : Python Class Example                    
 
 http://pinkwink.kr
